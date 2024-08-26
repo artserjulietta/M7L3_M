@@ -7,11 +7,11 @@ def test_password_characters():
     password = generate_password(100)  # Генерируем длинный пароль для более надежной проверки
     for char in password:
         assert char in valid_characters
+def test_password():
+    p = generate_password(6)
+    assert len(p) == 6
 
-"""
-Допиши еще один тест из предложенных. Или придумай свой.
-Если сможешь написать больше, то будет круто!
-
-Тест, что длина пароля соответствует заданной
-Тест, что два сгенерированных подряд пароля различаются
-"""
+def test_password_2():
+    p1 = generate_password(4)
+    p2 = generate_password(4)
+    assert p1 != p2
